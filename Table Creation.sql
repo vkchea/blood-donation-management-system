@@ -1,0 +1,7 @@
+CREATE TABLE PEOPLE(
+person_id int PRIMARY KEY,
+first_name VARCHAR NOT NULL,
+last_name VARCHAR NOT NULL,
+age VARCHAR NOT NULL
+);
+
