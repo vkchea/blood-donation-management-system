@@ -1,8 +1,8 @@
 CREATE TABLE PEOPLE(
-person_id int PRIMARY KEY,
-first_name varchar NOT NULL,
-last_name varchar NOT NULL,
-age int NOT NULL
+	person_id int PRIMARY KEY,
+	first_name varchar NOT NULL,
+	last_name varchar NOT NULL,
+	age int NOT NULL
 );
 
 CREATE TABLE DONOR(
