@@ -35,7 +35,7 @@ CREATE TABLE PRE_EXAM(
 	pre_exam_id int PRIMARY KEY NOT NULL,
 	hemoglobin_gDL decimal(5,2) NOT NULL,
 	temperature_F decimal(5,2) NOT NULL,
-	blood_pressure_mmHg decimal(5,2) NOT NULL,
+	blood_pressure_mmHg varchar NOT NULL,
 	pulse_rate_BPM int NOT NULL
 );
 
