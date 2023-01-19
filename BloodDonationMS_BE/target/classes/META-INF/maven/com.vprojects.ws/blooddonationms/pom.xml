@@ -18,6 +18,16 @@
 		    <groupId>wsdl4j</groupId>
 		    <artifactId>wsdl4j</artifactId>
 		</dependency>
+		<dependency>
+		    <groupId>com.microsoft.sqlserver</groupId>
+		    <artifactId>mssql-jdbc</artifactId>
+	        <version>11.2.3.jre8</version>
+		    <scope>runtime</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
