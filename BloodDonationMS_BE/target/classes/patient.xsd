@@ -23,7 +23,7 @@
             <xs:element name="patientId" type="xs:int"/>
             <xs:element name="bloodType" type="xs:string"/>
             <xs:element name="needStatus" type="xs:string"/>
-            <xs:element name="age" type="xs:int"/>
+            <xs:element name="weight_lbs" type="xs:int"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

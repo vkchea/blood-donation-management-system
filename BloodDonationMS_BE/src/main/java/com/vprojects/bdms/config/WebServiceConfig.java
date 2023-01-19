@@ -18,11 +18,11 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     // bean definitions
 	
 	@Bean
-	public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
+	public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext) {
 	    MessageDispatcherServlet servlet = new MessageDispatcherServlet();
 	    servlet.setApplicationContext(applicationContext);
 	    servlet.setTransformWsdlLocations(true);
-	    return new ServletRegistrationBean(servlet, "/ws/*");
+	    return new ServletRegistrationBean<MessageDispatcherServlet>(servlet, "/ws/*");
 	}
 	
 	@Bean(name = "patient")
