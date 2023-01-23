@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="da93704e-3fa8-4431-be01-4d0984c50130" activeEnvironment="Default" name="Patient" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="521efae3-4498-43fb-8d11-4afd09d201fe" wsaVersion="NONE" name="PatientsPortSoap11" type="wsdl" bindingName="{http://www.vprojects.com/bdms/patient}PatientsPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/patient.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/patient.wsdl"><con:part><con:url>http://localhost:8080/ws/patient.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.vprojects.com/bdms/patient" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.vprojects.com/bdms/patient" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vprojects.com/bdms/patient">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.vprojects.com/bdms/patient" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getPatientRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="patient_id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPatientResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="patient" type="tns:patient"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="patient">
+        <xs:sequence>
+          <xs:element name="patientId" type="xs:int"/>
+          <xs:element name="bloodType" type="xs:string"/>
+          <xs:element name="needStatus" type="xs:string"/>
+          <xs:element name="age" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getPatientRequest">
+    <wsdl:part element="tns:getPatientRequest" name="getPatientRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPatientResponse">
+    <wsdl:part element="tns:getPatientResponse" name="getPatientResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PatientsPort">
+    <wsdl:operation name="getPatient">
+      <wsdl:input message="tns:getPatientRequest" name="getPatientRequest"></wsdl:input>
+      <wsdl:output message="tns:getPatientResponse" name="getPatientResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PatientsPortSoap11" type="tns:PatientsPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPatient">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getPatientRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPatientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PatientsPortService">
+    <wsdl:port binding="tns:PatientsPortSoap11" name="PatientsPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="7ddb4758-d695-400d-8f59-8b1df1f102cb" isOneWay="false" action="" name="getPatient" bindingOperationName="getPatient" type="Request-Response" outputName="getPatientResponse" inputName="getPatientRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1750263c-7a18-4f99-bc5d-d7e8ad9f7618" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="text/xml" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:pat="http://www.vprojects.com/bdms/patient" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Header/>
+<soapenv:Body>
+ <pat:getPatientRequest>
+     <pat:patient_id>7</pat:patient_id>
+ </pat:getPatientRequest>
+</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.vprojects.com/bdms/patient/PatientsPort/getPatientRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

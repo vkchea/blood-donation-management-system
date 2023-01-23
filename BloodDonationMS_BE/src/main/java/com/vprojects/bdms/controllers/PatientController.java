@@ -25,6 +25,7 @@ public class PatientController {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getPatientRequest")
     @ResponsePayload
     public GetPatientResponse getPatient(@RequestPayload GetPatientRequest request) {
+    	System.out.println("hello");
         GetPatientResponse response = new GetPatientResponse();
         response.setPatient(patientRepository.findPatient(request.getPatientId()));
 
