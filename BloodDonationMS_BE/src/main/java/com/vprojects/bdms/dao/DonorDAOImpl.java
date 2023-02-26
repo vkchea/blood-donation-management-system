@@ -11,7 +11,7 @@ import com.vprojects.bdms.model.PatientMapper;
 import com.vprojects.bdms.patient.Patient;
 
 @Component
-public class PatientDAOImpl {
+public class DonorDAOImpl {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

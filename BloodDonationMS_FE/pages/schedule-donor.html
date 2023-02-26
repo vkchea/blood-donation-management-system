@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles/home-page.css">  
+    <title>Schedule Donor</title>
+    <link rel="stylesheet" href="../styles/home-page.css">  
+    <link rel="stylesheet" href="/styles/donor-search.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
@@ -14,7 +15,7 @@
           <i class="material-icons" id="drop">invert_colors</i>
           <h1 id="home-page-title">Blood Donation Management System</h1>
           <a href="/index.html"> Home </a>
-          <a> Features </a>
+          <a href="/features.html"> Features </a>
           <div id="profile">
             <i class="material-icons" id="profile-pic">account_circle</i>
             <p><b>Dr. Virath</b></p>
@@ -25,7 +26,7 @@
           <div id="features">
             <div class="feature">
               <i class="material-icons">schedule</i>
-              <a class="feature-name" href="/pages/schedule-donor.html"> Schedule Blood Drive Appointment</a>
+              <a class="feature-name" href="../pages/schedule-donor.html"> Schedule Blood Drive Appointment</a>
             </div>
             <div class="feature">
               <i class="material-icons">group</i>
@@ -41,10 +42,21 @@
             </div>
           </div>
           <div id="feature-display">
+            <h2>Schedule Blood Drive Appointment</h2>
+            <hr/>
+            <h4><b>Donor Search </b></h4>
+            <span>
+              <label for="first-name">First Name: </label>
+              <input type="text" id="first-name" name="first-name">
+              <label for="last-name">Last Name: </label>
+              <input type="text" id="last-name" name="last-name">
+              <input type="button" value="Search" onclick="return search()">
+            </span>
           </div>
           <div id="feature-tools">
           </div>
       </div>
     </main>
+    <script src="/scripts/donor-search.js"></script>
   </body>
 </html>

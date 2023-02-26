@@ -1,6 +1,11 @@
-function soap() {
+function search() {
+    let f_name = document.getElementById("first-name");
+    let l_name = document.getElementById("last-name");
+
+    let url = 'http://localhost:8080/getDonorRequest/' + f_name.value + "_" + l_name.value;
+    console.log(url);
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('GET', 'http://localhost:8080/getPatientRequest/7');
+    xmlhttp.open('GET', url);
     xmlhttp.send();
     xmlhttp.responseType = "json";
     xmlhttp.onload = () => {

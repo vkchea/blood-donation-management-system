@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 import com.vprojects.bdms.patient.Patient;
 
 @Component
-public class PatientDAO {
+public class DonorDAO {
 	
 	@Autowired
-	PatientDAOImpl patientJdbc;
+	DonorDAOImpl patientJdbc;
 
     @PostConstruct
     public void initData() {
