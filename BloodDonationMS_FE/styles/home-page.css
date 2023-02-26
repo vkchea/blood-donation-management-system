@@ -1,13 +1,106 @@
-#home-page-title{
-    text-align: center;
+body {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 13px;
 }
 
-label {
+header {
+    display:flex;
+    text-align: center;
+    width: 100vh;
+    cursor: default;
+}
+
+header h2{
+    width: 10vh;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+header h2:hover{
+    color: rgb(121, 121, 121);
+}
+
+#home-page-title{
+    font-size: 20px;
+}
+
+#drop{
+    color:red;
+    font-size: 27px;
+    height: 34px;
+    margin-top: 10px;
+}
+
+#profile{
+    position: absolute;
+    right: 50px;
+    display: flex;
+}
+
+#profile p{
+    font-size: 16px;
+}
+
+#profile-pic{
+    height: 24px;
+    margin-top: 11px;
+    margin-right: 5px;
+}
+
+#features-section{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#features-section div{
     float: left;
 }
 
-span {
-    display: block;
-    overflow: hidden;
-    padding: 0 4px 0 6px;
+#features{
+    height: 100vh;
+    width: 36vh;
+    border: solid;
+    border-radius: 4px;
+    border-width: .5px;
+    border-color: rgb(87, 87, 87);
+}
+
+.feature {
+    width: 36vh;
+    height: 3vh;
+    float: left;
+    border-bottom: solid;
+    border-width: 2px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.feature:hover{
+    background-color: white;
+    border: solid;
+    border-width: 1px;
+    box-shadow: 0.4rem 0.4rem 0 rgb(36, 36, 36);
+    transform: translate(-0.4rem, -0.4rem);
+}
+
+.feature-name{
+    font-weight: bold;
+    padding-top:1vh;
+    padding-bottom:1vh;
+}
+
+.feature i{
+    margin-left: 10px;
+}
+
+#feature-display{
+    height: 100vh;
+    width: 100vh;
+}
+
+#feature-tools{
+    height: 100vh;
+    width: 20vh;
 }

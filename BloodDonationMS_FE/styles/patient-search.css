@@ -1,0 +1,13 @@
+#home-page-title{
+    text-align: center;
+}
+
+label {
+    float: left;
+}
+
+span {
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 6px;
+}

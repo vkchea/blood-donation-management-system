@@ -8,49 +8,11 @@
 
 package com.vprojects.bdms.patient;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>Java class for patient complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="patient">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="patientId" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="bloodType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="needStatus" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="weight_lbs" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "patient", propOrder = {
-    "patientId",
-    "bloodType",
-    "needStatus",
-    "weightLbs"
-})
 public class Patient {
 
     protected int patientId;
-    @XmlElement(required = true)
     protected String bloodType;
-    @XmlElement(required = true)
     protected String needStatus;
-    @XmlElement(name = "weight_lbs")
     protected int weightLbs;
 
     /**

@@ -1,19 +1,18 @@
 package com.vprojects.bdms.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ws.server.endpoint.annotation.Endpoint;
-import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
-import org.springframework.ws.server.endpoint.annotation.RequestPayload;
-import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.vprojects.bdms.dao.PatientDAO;
-import com.vprojects.bdms.patient.GetPatientRequest;
-import com.vprojects.bdms.patient.GetPatientResponse;
 
-@Endpoint
+@RestController
 public class PatientController {
-
-    private static final String NAMESPACE_URI = "http://www.vprojects.com/bdms/patient";
 
     private PatientDAO patientRepository;
 
@@ -21,14 +20,10 @@ public class PatientController {
     public PatientController(PatientDAO patientRepository) {
         this.patientRepository = patientRepository;
     }
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getPatientRequest")
-    @ResponsePayload
-    public GetPatientResponse getPatient(@RequestPayload GetPatientRequest request) {
-    	System.out.println("hello");
-        GetPatientResponse response = new GetPatientResponse();
-        response.setPatient(patientRepository.findPatient(request.getPatientId()));
-
-        return response;
+    
+    @CrossOrigin(origins = "http://10.0.0.74:8081")
+    @RequestMapping(value = "/getPatientRequest/{patientId}", method = RequestMethod.GET)
+    public ResponseEntity<Object> getPatient(@PathVariable("patientId") int patientId) {
+        return new ResponseEntity<>(patientRepository.findPatient(patientId), HttpStatus.OK);
     }
 }
